@@ -50,18 +50,18 @@
     margin-top: 5px;
     font-family: 'Varela';
     font-size: 36px;
-    color: $danger;
+    color: white;
     letter-spacing: 4px;
     font-weight: 600;
 
     @include for-phone {
-      margin-top: 3px;
+      margin-top: 0px;
       font-size: 24px;
     }
 
     @include for-tablet {
-      font-size: 28px;
-      margin-top: 5px;
+      font-size: 24px;
+      margin-top: 0px;
     }
 
     @include for-small-desktop {
@@ -84,7 +84,7 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
-    color: $warning;
+    color: white;
 
     @include for-phone {
       font-size: 18px;
@@ -111,6 +111,7 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 10px;
@@ -142,18 +143,18 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
-    color: $warning;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 0px;
     }
 
     @include for-tablet {
       font-size: 14px;
       letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 0px;
     }
 
     @include for-small-desktop {
@@ -180,16 +181,17 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
-      margin-top: 14px;
+      margin-top: 2px;
       letter-spacing: 1px;
     }
 
     @include for-tablet {
       font-size: 14px;
-      margin-top: 20px;
+      margin-top: 2px;
       letter-spacing: 1px;
     }
 
@@ -215,7 +217,7 @@
   &__facebook-action {
     cursor: pointer;
     transition: 0.2s ease-in;
-    margin-top: 8px;
+    margin-top: 4px;
 
     &:hover {
       transform: scale(1.1);
@@ -226,23 +228,23 @@
     }
 
     @include for-phone {
-      max-width: 24px;
-    }
-
-    @include for-tablet {
       max-width: 32px;
     }
 
-    @include for-small-desktop {
-      max-width: 36px;
-    }
-
-    @include for-desktop {
+    @include for-tablet {
       max-width: 42px;
     }
 
-    @include for-big-desktop {
+    @include for-small-desktop {
       max-width: 48px;
+    }
+
+    @include for-desktop {
+      max-width: 52px;
+    }
+
+    @include for-big-desktop {
+      max-width: 64px;
     }
   }
 
@@ -304,6 +306,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 
     span {
       font-family: 'Dolce Vita';

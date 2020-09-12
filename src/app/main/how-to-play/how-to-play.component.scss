@@ -11,7 +11,7 @@
   &__how-text {
     font-family: 'Dolce Vita';
     font-size: 36px;
-    color: $dark;
+    color: white;
     letter-spacing: 7px;
     font-weight: 800;
 
@@ -27,11 +27,9 @@
       font-size: 36px;
     }
 
-
     @include for-desktop {
       font-size: 42px;
     }
-
 
     @include for-big-desktop {
       font-size: 52px;
@@ -39,7 +37,6 @@
   }
 
   &__logo {
-
     margin-right: 25px;
 
     @include for-phone {
@@ -66,7 +63,7 @@
   &__instructions {
     font-size: 24px;
     font-family: 'Varela';
-    color: $dark;
+    color: white;
     font-weight: 600;
 
     li {
@@ -76,7 +73,6 @@
     @include for-phone {
       font-size: 14px;
       margin-top: 18px;
-
     }
 
     @include for-tablet {
@@ -87,15 +83,12 @@
     @include for-small-desktop {
       font-size: 18px;
       margin-top: 24px;
-
     }
-
 
     @include for-desktop {
       font-size: 20px;
       margin-top: 28px;
     }
-
 
     @include for-big-desktop {
       font-size: 24px;

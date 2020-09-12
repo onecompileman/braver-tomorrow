@@ -8,15 +8,19 @@ import { Router } from '@angular/router';
 })
 export class EnterNameComponent implements OnInit {
   name: string;
+  isError: boolean;
 
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
   next() {
-    if (this.name.length > 0) {
+    if (this.name && this.name.trim().length > 0) {
       localStorage.setItem('name', this.name);
       this.router.navigate(['/how-to-play']);
+    } else {
+      this.isError = true;
+      setTimeout(() => (this.isError = false), 1000);
     }
   }
 }

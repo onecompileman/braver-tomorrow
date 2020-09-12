@@ -48,15 +48,16 @@
     font-size: 36px;
     letter-spacing: 5px;
     font-weight: 600;
+    color: white;
 
     @include for-phone {
-      margin-top: 3px;
+      margin-top: 0px;
       font-size: 28px;
     }
 
     @include for-tablet {
       font-size: 32px;
-      margin-top: 5px;
+      margin-top: 0px;
     }
 
     @include for-small-desktop {
@@ -110,7 +111,7 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
-    color: $warning;
+    color: white;
 
     @include for-phone {
       font-size: 18px;
@@ -168,7 +169,7 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
-    color: $warning;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
@@ -203,6 +204,7 @@
 
   &__share-results {
     text-transform: uppercase;
+    color: white;
 
     font-family: 'Varela';
     letter-spacing: 3px;
@@ -251,25 +253,24 @@
     &:active {
       transform: scale(0.9);
     }
-
     @include for-phone {
-      max-width: 24px;
-    }
-
-    @include for-tablet {
       max-width: 32px;
     }
 
-    @include for-small-desktop {
-      max-width: 36px;
-    }
-
-    @include for-desktop {
+    @include for-tablet {
       max-width: 42px;
     }
 
-    @include for-big-desktop {
+    @include for-small-desktop {
       max-width: 48px;
+    }
+
+    @include for-desktop {
+      max-width: 52px;
+    }
+
+    @include for-big-desktop {
+      max-width: 64px;
     }
   }
 
@@ -331,6 +332,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 
     span {
       font-family: 'Dolce Vita';

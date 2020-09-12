@@ -24,19 +24,19 @@
           />
           <img
             [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
+            class="wm-game__tile-border"
             src="assets/images/match-border.png"
             alt="Match"
           />
           <img
             [hidden]="tile.matched"
             class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
+            src="assets/images/match-bg.png"
             alt="Match"
           />
           <img
             *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
+            class="wm-game__effect animate__animated animate__zoomIn"
             src="assets/images/match-effect.png"
             alt="Match"
           />
@@ -65,19 +65,19 @@
           />
           <img
             [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
+            class="wm-game__tile-border"
             src="assets/images/match-border.png"
             alt="Match"
           />
           <img
             [hidden]="tile.matched"
             class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
+            src="assets/images/match-bg.png"
             alt="Match"
           />
           <img
             *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
+            class="wm-game__effect animate__animated animate__zoomIn"
             src="assets/images/match-effect.png"
             alt="Match"
           />
@@ -106,19 +106,19 @@
           />
           <img
             [hidden]="!tile.matched"
-            class="wm-game__tile-bg"
+            class="wm-game__tile-border"
             src="assets/images/match-border.png"
             alt="Match"
           />
           <img
             [hidden]="tile.matched"
             class="wm-game__tile-bg"
-            src="assets/images/leaderboard-bg.png"
+            src="assets/images/match-bg.png"
             alt="Match"
           />
           <img
             *ngIf="tile.isEffects"
-            class="wm-game__effect animate__animated animate__zoomInLeft"
+            class="wm-game__effect animate__animated animate__zoomIn"
             src="assets/images/match-effect.png"
             alt="Match"
           />
@@ -134,9 +134,7 @@
             {{ tilesMatch }}
           </span>
         </div>
-        <span class="wm-game__pair-caption">
-          PAIRS FOUND
-        </span>
+        <span class="wm-game__pair-caption"> PAIRS FOUND </span>
       </div>
       <!-- Hint -->
       <div class="wm-game__hint">
@@ -166,26 +164,18 @@
             {{ time | number: '.2-2' }}
           </span>
         </div>
-        <span class="wm-game__pair-caption">
-          TIME
-        </span>
+        <span class="wm-game__pair-caption"> TIME </span>
       </div>
     </div>
   </div>
 
   <div class="wm-game__game-text animate__animated">
-    <span>
-      GAME
-    </span>
+    <span> GAME </span>
   </div>
-  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 5">
-    <span>
-      CONGRATS
-    </span>
+  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 6">
+    <span> CONGRATS </span>
   </div>
-  <div class="wm-game__game-text" *ngIf="time >= 30">
-    <span>
-      TIMES UP
-    </span>
+  <div class="wm-game__game-text" *ngIf="time >= 60">
+    <span> TIMES UP </span>
   </div>
 </div>

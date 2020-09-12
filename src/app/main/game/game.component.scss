@@ -86,13 +86,13 @@
       }
 
       &:nth-child(2) {
-        height: 9vh;
+        width: 8.5vh;
         position: absolute;
         z-index: 2;
       }
 
       &:nth-child(3) {
-        height: 15vh;
+        height: 18vh;
         position: absolute;
         z-index: 0;
       }
@@ -100,29 +100,46 @@
   }
 
   &__tile-bg {
-    height: 29vh;
+    height: 20vh;
     z-index: 0;
 
     @include for-phone {
-      height: 25vh;
+      height: 20vh;
     }
 
     @include for-tablet {
-      height: 25vh;
+      height: 20vh;
     }
 
     @include for-small-desktop {
-      height: 29vh;
+      height: 22vh;
+    }
+  }
+
+  &__tile-border {
+    height: 20vh;
+    z-index: 0;
+
+    @include for-phone {
+      height: 26vh;
     }
 
+    @include for-tablet {
+      height: 26vh;
+    }
 
+    @include for-small-desktop {
+      height: 28vh;
+    }
   }
 
   &__game-row-1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -6vh;
+
+    margin-top: 2.5vh;
+    // margin-top: -6vh;
 
     &:first-child {
       margin-top: 2.5vh;
@@ -136,7 +153,7 @@
       }
 
       @include for-small-desktop {
-        margin-top: 2.5vh;
+        margin-top: 4.5vh;
       }
     }
   }
@@ -152,6 +169,21 @@
     margin-right: 1.2vh;
     transition: 0.2s ease-in;
     cursor: pointer;
+
+    @include for-phone {
+      height: 20vh;
+      width: 20vh;
+    }
+
+    @include for-tablet {
+      height: 20vh;
+      width: 20vh;
+    }
+
+    @include for-small-desktop {
+      width: 22vh;
+      height: 22vh;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -170,47 +202,56 @@
         z-index: 1;
 
         @include for-phone {
-          height: 23vh;
+          height: 20vh;
         }
 
         @include for-tablet {
-          height: 23vh;
+          height: 20vh;
         }
 
         @include for-small-desktop {
-          height: 27vh;
+          height: 22vh;
         }
-
       }
 
       &:nth-child(2) {
-        // width: 13vh;
-        height: 17vh;
+        width: 14vh;
+        // height: 17vh;
         position: absolute;
-        z-index: 2;
+        z-index: 3;
 
         @include for-phone {
-          height: 13vh;
+          // height: 13vh;
         }
 
         @include for-tablet {
-          height: 13vh;
+          // height: 13vh;
         }
 
         @include for-small-desktop {
-          height: 17vh;
+          // height: 17vh;
         }
-
       }
     }
   }
 
   &__effect {
-    height: 10vh;
+    // height: 10vh;
     position: absolute;
-    z-index: 9;
-    margin-top: -11vh;
-    animation: matchEffect 2.5s ease-in forwards;
+    z-index: 2;
+    // margin-top: -11vh;
+    // animation: matchEffect 2.5s ease-in forwards;
+    @include for-phone {
+      height: 38vh;
+    }
+
+    @include for-tablet {
+      height: 38vh;
+    }
+
+    @include for-small-desktop {
+      height: 40vh;
+    }
   }
 
   &__landscape-tile {
@@ -240,7 +281,7 @@
     margin-left: 1vh;
     margin-right: 1vh;
 
-    @for $x from 1 through 5 {
+    @for $x from 1 through 6 {
       &:nth-child(#{$x}) {
         animation-delay: (200ms * ($x - 1)) + 500ms;
       }

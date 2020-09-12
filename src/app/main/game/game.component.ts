@@ -70,6 +70,7 @@ export class GameComponent implements OnInit {
           if (this.tile1.imagePath === tile.imagePath) {
             this.tile1.opened = true;
             tile.isEffects = tile.matched = this.tile1.matched = true;
+            setTimeout(() => (tile.isEffects = false), 1500);
             this.tile1 = this.tile2 = null;
 
             const matchTile = this.neededTiles.find(
@@ -84,25 +85,27 @@ export class GameComponent implements OnInit {
 
             sound.play();
 
-            if (this.tilesMatch >= 5) {
+            if (this.tilesMatch >= 6) {
               let top = -1;
-              top =
-                this.leaderboards.length > 0
-                  ? this.leaderboards.findIndex(
-                      (leaderboard) => this.time <= leaderboard.time
-                    )
-                  : 1;
-              top =
-                this.leaderboards.length < 5 && top === -1
-                  ? this.leaderboards.length + 1
-                  : top;
+
+              const leaderboards = cloneDeep(this.leaderboards);
+
+              leaderboards.push({
+                name: localStorage.getItem('name'),
+                time: this.time,
+                id: 'this',
+              });
+
+              leaderboards.sort((a, b) => a.time - b.time);
+
+              top = leaderboards.findIndex((l) => l.id === 'this') + 1;
 
               let leaderboard: DocumentReference = null;
               if (top != -1) {
                 leaderboard = await this.leaderboardService.create({
                   name: localStorage.getItem('name'),
                   time: this.time,
-                  rank: top + 1,
+                  rank: top,
                 });
               } else {
                 leaderboard = await this.leaderboardService.create({
@@ -114,7 +117,7 @@ export class GameComponent implements OnInit {
               setTimeout(() => {
                 if (top != -1) {
                   localStorage.setItem('time', this.time.toString());
-                  localStorage.setItem('rank', (top + 1).toString());
+                  localStorage.setItem('rank', top.toString());
                   localStorage.setItem('leaderboard-id', leaderboard.id);
                   this.router.navigate(['/top-scorer']);
                 } else {
@@ -146,7 +149,7 @@ export class GameComponent implements OnInit {
   }
 
   private initTiles() {
-    this.distractionTiles = Array(10)
+    this.distractionTiles = Array(6)
       .fill(1)
       .map((n, i) => ({
         imagePath: `/assets/images/game-icons/d${i + 1}.png`,
@@ -157,7 +160,7 @@ export class GameComponent implements OnInit {
         isEffects: false,
       }));
 
-    this.neededTiles = Array(5)
+    this.neededTiles = Array(6)
       .fill(1)
       .map((n, i) => ({
         imagePath: `/assets/images/game-icons/${i + 1}.png`,
@@ -175,19 +178,18 @@ export class GameComponent implements OnInit {
     ];
 
     this.tiles = shuffle(this.tiles).map((tile, index) => ({ ...tile, index }));
-    this.row1 = this.tiles.slice(0, 7);
-    this.row2 = this.tiles.slice(7, 13);
+    this.row1 = this.tiles.slice(0, 6);
+    this.row2 = this.tiles.slice(6, 13);
     console.log(this.row2);
-    this.row3 = this.tiles.slice(13, 20);
+    this.row3 = this.tiles.slice(13, 19);
   }
 
   private startTimeInterval() {
     interval(10)
-      .pipe(filter(() => this.time < 30 && this.tilesMatch < 5))
+      .pipe(filter(() => this.time < 60 && this.tilesMatch < 6))
       .subscribe(async () => {
         this.time += 0.01;
-
-        if (this.time >= 30) {
+        if (this.time >= 60) {
           let leaderboard = await this.leaderboardService.create({
             name: localStorage.getItem('name'),
             match: this.tilesMatch,
@@ -195,9 +197,7 @@ export class GameComponent implements OnInit {
           const sound = new Howl({
             src: ['/assets/sounds/timesup.mp3'],
           });
-
           sound.play();
-
           this.tiles = this.tiles.map((tile) => ({
             opened: true,
             ...tile,

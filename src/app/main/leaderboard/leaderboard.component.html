@@ -4,16 +4,14 @@
     fxLayout="column"
     fxLayoutAlign="center center"
   >
-    <img
+    <!-- <img
       src="assets/images/leaderboard-bg.png"
       alt="Leaderboard"
       class="wm-leaderboard__bg"
-    />
+    /> -->
     <div class="wm-leaderboard__header">
       <img src="assets/images/logo.png" alt="Logo" />
-      <span>
-        LEADERBOARD
-      </span>
+      <span> LEADERBOARD </span>
     </div>
     <div class="wm-leaderboard__leader-container" [@listAnimation]="5">
       <!-- Leaderitem -->
@@ -48,16 +46,16 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-leaderboard__action-btn" (click)="play()">
-      <img src="assets/images/play-again-btn.png" alt="Play Again" />
-      <span>
-        PLAY AGAIN
-      </span>
+      <img
+        src="assets/images/play-again-btn.png"
+        alt="Play Again"
+        style="margin-left: 12px"
+      />
+      <span> PLAY AGAIN </span>
     </div>
     <div class="wm-leaderboard__action-btn" (click)="leaderBoards()">
       <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <span>
-        LEADERBOARD
-      </span>
+      <span> LEADERBOARD </span>
     </div>
   </div>
 </div>

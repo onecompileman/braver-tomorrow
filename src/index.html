@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hive Mind Memory Game</title>
+    <meta property="og:url" content="/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Check My Score - Hive Match Game" />
+    <meta property="og:description" content="Match Game" />
+    <meta property="og:image" content="/assets/images/logo.png" />
+    <base href="/" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Hive Mind Memory Game</title>
-  <meta property="og:url" content="/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Check My Score - Hive Match Game" />
-  <meta property="og:description" content="Match Game" />
-  <meta property="og:image" content="/assets/images/logo.png" />
-  <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=0.9" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-</head>
+  <body>
+    <wm-root></wm-root>
 
-<body>
-  <wm-root></wm-root>
+    <script type="text/javascript">
+      // if (!location.origin.includes('https')) {
+      //   location.href = location.origin.replace('http', 'https');
+      // }
 
-  <script type="text/javascript">
-    // if (!location.origin.includes('https')) {
-    //   location.href = location.origin.replace('http', 'https');
-    // }
+      (function removeAddressBar() {
+        // Make sure it really scrolls down.
+        window.scrollTo(0, 10);
 
-    (function removeAddressBar() {
-      // Make sure it really scrolls down.
-      window.scrollTo(0, 10);
-
-      // Set a timeout to check that it has scrolled down.
-      setTimeout(function () {
-        if (window.scrollY == 0) {
-          removeAddressBar();
-        } else {
-          window.scrollTo(0, 1);
-          //launch();
-        }
-      }, 500);
-    })(this);
-
-  </script>
-</body>
-
+        // Set a timeout to check that it has scrolled down.
+        setTimeout(function () {
+          if (window.scrollY == 0) {
+            removeAddressBar();
+          } else {
+            window.scrollTo(0, 1);
+            //launch();
+          }
+        }, 500);
+      })(this);
+    </script>
+  </body>
 </html>

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "waveplay-match-game"
+    "default": "waveplay-match-game",
+    "staging": "hive-perfect-match"
   }
 }

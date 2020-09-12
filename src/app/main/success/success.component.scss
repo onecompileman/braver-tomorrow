@@ -14,6 +14,7 @@
 
   &__congrats-text {
     margin-top: 5px;
+    color: white;
     font-family: 'Dolce Vita';
     font-size: 36px;
     letter-spacing: 5px;
@@ -49,17 +50,18 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 12px;
       letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 2px;
     }
 
     @include for-tablet {
       font-size: 14px;
       letter-spacing: 1px;
-      margin-bottom: 20px;
+      margin-bottom: 2px;
     }
 
     @include for-small-desktop {
@@ -83,6 +85,7 @@
 
   &__share-results {
     text-transform: uppercase;
+    color: white;
 
     font-family: 'Varela';
     letter-spacing: 3px;
@@ -90,13 +93,13 @@
 
     @include for-phone {
       font-size: 12px;
-      margin-top: 14px;
+      margin-top: 2px;
       letter-spacing: 1px;
     }
 
     @include for-tablet {
       font-size: 14px;
-      margin-top: 20px;
+      margin-top: 2px;
       letter-spacing: 1px;
     }
 
@@ -133,33 +136,33 @@
     }
 
     @include for-phone {
-      max-width: 24px;
-    }
-
-    @include for-tablet {
       max-width: 32px;
     }
 
-    @include for-small-desktop {
-      max-width: 36px;
-    }
-
-    @include for-desktop {
+    @include for-tablet {
       max-width: 42px;
     }
 
-    @include for-big-desktop {
+    @include for-small-desktop {
       max-width: 48px;
+    }
+
+    @include for-desktop {
+      max-width: 52px;
+    }
+
+    @include for-big-desktop {
+      max-width: 64px;
     }
   }
 
   &__trophy {
     @include for-phone {
-      max-width: 48px;
+      max-width: 42px;
     }
 
     @include for-tablet {
-      max-width: 84px;
+      max-width: 64px;
     }
 
     @include for-small-desktop {
@@ -211,6 +214,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 
     span {
       font-family: 'Dolce Vita';
@@ -333,6 +337,7 @@
     font-family: 'Varela';
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
 
     @include for-phone {
       font-size: 10px;

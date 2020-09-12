@@ -14,12 +14,8 @@
         {{ matches }}
       </div>
     </div>
-    <span class="wm-success__congrats-text">
-      MATCHES FOUND
-    </span>
-    <span class="wm-success__you-found">
-      IN 30 SECONDS
-    </span>
+    <span class="wm-success__congrats-text"> MATCHES FOUND </span>
+    <span class="wm-success__you-found"> IN 60 SECONDS </span>
     <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS
     </span>
@@ -49,16 +45,16 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-success__action-btn" (click)="play()">
-      <img src="assets/images/play-again-btn.png" alt="Play Again" />
-      <span>
-        PLAY AGAIN
-      </span>
+      <img
+        src="assets/images/play-again-btn.png"
+        alt="Play Again"
+        style="margin-left: 12px"
+      />
+      <span> PLAY AGAIN </span>
     </div>
     <div class="wm-success__action-btn" (click)="leaderBoards()">
       <img src=" assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <span>
-        LEADERBOARD
-      </span>
+      <span> LEADERBOARD </span>
     </div>
   </div>
 </div>

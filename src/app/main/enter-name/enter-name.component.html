@@ -1,15 +1,26 @@
 <div class="wm-enter">
   <div class="wm-enter__container" fxLayoutAlign="center center">
-    <div class="wm-enter__form-container" fxLayout="column" fxLayoutAlign="center center">
+    <div
+      class="wm-enter__form-container"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
       <img class="wm-enter__logo" src="assets/images/logo.png" alt="Logo" />
-      <span class="wm-enter__enter-text">
-        ENTER YOUR NAME
-      </span>
-      <div class="wm-enter__name-field" fxLayoutAlign="center center">
+      <span class="wm-enter__enter-text"> ENTER YOUR NAME </span>
+      <div
+        class="wm-enter__name-field animate__animated"
+        [class.animate__shakeX]="isError"
+        fxLayoutAlign="center center"
+      >
         <img src="assets/images/entry-form.png" alt="Entry Form" />
-        <input class="wm-enter__name-text" [(ngModel)]="name">
+        <input class="wm-enter__name-text" [(ngModel)]="name" />
       </div>
-      <img (click)="next()" class="wm-enter__action" src="assets/images/ok-btn.png" alt="Ok" />
+      <img
+        (click)="next()"
+        class="wm-enter__action"
+        src="assets/images/ok-btn.png"
+        alt="Ok"
+      />
     </div>
   </div>
 </div>
