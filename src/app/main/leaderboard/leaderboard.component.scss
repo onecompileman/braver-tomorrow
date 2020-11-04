@@ -7,17 +7,51 @@
   background-position: center;
   height: 100%;
   width: 100%;
+  &__home {
+    height: 11vh;
+    position: absolute;
+    top: 3.5vh;
+    left: 3.5vh;
+  }
+
+  &__cta {
+    height: 18vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+  }
+
+  &__globe {
+    height: 11vh;
+    position: absolute;
+    top: 3.5vh;
+    right: 3.5vh;
+  }
+  &__logo-leader {
+    height: 22vh;
+    margin-bottom: -4vh;
+  }
 
   &__leader-container {
-    position: absolute;
+    // position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // margin-top: 10vh;
+  }
+
+  &__leaderboard-text {
+    height: 14vh;
+  }
+
+  &__logo {
+    height: 28vh;
   }
 
   &__leader-item {
     display: flex;
+
     align-items: center;
     margin-bottom: 2.5vh;
     animation: fade-in 400ms ease-in forwards;
@@ -38,22 +72,51 @@
   }
 
   &__leader-caption {
-    position: absolute;
+    // position: absolute;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    position: relative;
     align-items: center;
-    margin-left: -10%;
+    height: 5.5vh;
 
     img {
-      height: 15vh;
+      height: 7.5vh;
+      // margin-left: -10%;
+    }
+
+    .rank {
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+      font-size: 4vh;
+      height: 4vh;
+      // line-height: 6vh;
+      // line-height: initial;
+      // line-height: 4vh;
+      // position: absolute;
+      // margin-top: -1vh;
+      // margin-left: 3.5vh;
+      color: white;
+      font-weight: 600;
+    }
+
+    &-body {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      // align-items: center;
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+      color: #14344b;
+
+      width: -webkit-fill-available;
+      width: -moz-available;
+      padding: 2vh 2.5vh 2vh 2.6vh;
     }
 
     span {
-      font-family: 'Dolce Vita';
-      font-size: 4vh;
-      position: absolute;
-      color: white;
-      font-weight: 600;
+      font-size: 3.5vh;
+      line-height: 5.5vh;
+      height: 3.5vh;
+      font-weight: 400;
+      // line-height: initial;
     }
   }
 
@@ -62,11 +125,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 6vh;
+    top: 3vh;
     margin-left: 1vh;
 
     img {
-      height: 12vh;
+      height: 9vh;
     }
 
     span {
@@ -74,18 +137,38 @@
       font-size: 4.5vh;
       letter-spacing: 6px;
       font-weight: 700;
-      color: white;
-      font-family: 'Dolce Vita';
+      color: $dark;
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
     }
   }
 
   &__leader-body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     img {
-      height: 6vh;
+      width: 50vw;
+
+      @include for-phone {
+        width: 34vw;
+      }
+
+      @include for-tablet {
+        width: 34vw;
+      }
+
+      @include for-small-desktop {
+        width: 40vw;
+      }
+
+      @include for-desktop {
+        width: 40vw;
+      }
+
+      @include for-big-desktop {
+        width: 40vw;
+      }
     }
 
     div {
@@ -93,19 +176,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Varela';
-      color: $dark;
-      font-size: 3vh;
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+      color: #14344b;
+      font-size: 3.5vh;
       font-weight: 400;
       width: -webkit-fill-available;
       width: -moz-available;
-      padding-left: 9vh;
-      padding-right: 3vh;
+      padding-left: 11vh;
+      padding-right: 8vh;
     }
   }
 
   &__container {
-    height: 95%;
+    margin-top: 32vh;
+    // height: 98%;
     // background-image: url(/assets/images/leaderboard-bg.png);
     // background-size: auto 100%;
     // background-position: center;
@@ -114,7 +198,7 @@
   }
 
   &__bg {
-    height: 100%;
+    height: 75vh;
   }
 
   &__action-container {
@@ -124,27 +208,27 @@
 
     @include for-phone {
       right: 1%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-tablet {
       right: 2%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-small-desktop {
       right: 3%;
-      bottom: 3%;
+      bottom: 5%;
     }
 
     @include for-desktop {
       right: 4%;
-      bottom: 4%;
+      bottom: 6%;
     }
 
     @include for-big-desktop {
       right: 5%;
-      bottom: 5%;
+      bottom: 7%;
     }
   }
 
@@ -153,10 +237,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
 
     span {
-      font-family: 'Dolce Vita';
+      font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
       font-size: 24px;
       font-weight: 600;
@@ -194,10 +277,11 @@
     // }
 
     img {
-      margin-top: 20px;
-      max-width: 120px;
+      height: 24vh;
+      min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
+      margin: 1vh;
 
       &:hover {
         transform: scale(1.1);
@@ -206,36 +290,39 @@
       &:active {
         transform: scale(0.9);
       }
+    }
+  }
 
-      @include for-phone {
-        max-width: 60px;
-        margin-top: 20px;
-        margin-left: -5px;
-      }
+  &__time-text {
+    // font-family: 'Dolce Vita', Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 24px;
+    // font-weight: 600;
+    position: absolute;
 
-      @include for-tablet {
-        max-width: 80px;
-        margin-top: 24px;
-        margin-left: -10px;
-      }
+    @include for-phone {
+      font-size: 16px;
+      padding-bottom: 3px;
+    }
 
-      @include for-small-desktop {
-        max-width: 100px;
-        margin-top: 32px;
-        margin-left: -15px;
-      }
+    @include for-tablet {
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
 
-      @include for-desktop {
-        max-width: 120px;
-        margin-top: 36px;
-        margin-left: -20px;
-      }
+    @include for-small-desktop {
+      font-size: 20px;
+      padding-bottom: 6px;
+    }
 
-      @include for-big-desktop {
-        max-width: 150px;
-        margin-top: 50px;
-        margin-left: -25px;
-      }
+    @include for-desktop {
+      font-size: 24px;
+      padding-bottom: 8px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+      padding-bottom: 10px;
     }
   }
 }

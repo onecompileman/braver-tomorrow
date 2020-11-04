@@ -5,15 +5,21 @@
       fxLayout="column"
       fxLayoutAlign="center center"
     >
-      <img class="wm-enter__logo" src="assets/images/logo.png" alt="Logo" />
-      <span class="wm-enter__enter-text"> ENTER YOUR NAME </span>
+      <!-- <img class="wm-enter__logo" src="assets/images/logo.png" alt="Logo" /> -->
+      <span class="wm-enter__enter-text">
+        ENTER YOUR FULL NAME AND GCASH NUMBER
+      </span>
       <div
         class="wm-enter__name-field animate__animated"
         [class.animate__shakeX]="isError"
         fxLayoutAlign="center center"
       >
         <img src="assets/images/entry-form.png" alt="Entry Form" />
-        <input class="wm-enter__name-text" [(ngModel)]="name" />
+        <textarea
+          class="wm-enter__name-text"
+          [(ngModel)]="name"
+          rows="1"
+        ></textarea>
       </div>
       <img
         (click)="next()"

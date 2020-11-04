@@ -1,28 +1,24 @@
-<div class="wm-how-to" fxLayoutAlign="center center">
+<div class="wm-how-to" fxLayoutAlign="center center" fxLayout="column">
   <div>
-    <div class="wm-how-to__header" fxLayoutAlign="start center">
+    <div class="wm-how-to__header" fxLayoutAlign="center center">
       <img class="wm-how-to__logo" src="assets/images/logo.png" alt="Logo" />
-      <span class="wm-how-to__how-text"> HOW TO PLAY </span>
+      <!-- <span class="wm-how-to__how-text"> HOW TO PLAY </span> -->
     </div>
     <div class="wm-how-to__instructions">
       <ol>
-        <li>Click and flip two tiles at a time</li>
-        <li>Match all our Good Together Values.</li>
-        <li>Find the 6 correct matches as fast as you can.</li>
+        <li>Click and flip two circles at a time.</li>
+        <li>Find 5 correct matching icons as fast as you can.</li>
         <li>
-          Players who find all correct matches the quickest <br />
-          join the leaderboard.
-        </li>
-        <li>
-          Five players with the fastest time <br />wins Sodexo Gift Certificates
+          Players who find all correct matches <br />
+          the quickest join the leaderboard.
         </li>
       </ol>
     </div>
   </div>
   <img
     (click)="play()"
-    class="wm-how-to__action"
-    src="assets/images/begin-btn.png"
+    class="wm-how-to__action mt-3"
+    src="assets/images/ok-btn.png"
     alt="Begin"
   />
 </div>

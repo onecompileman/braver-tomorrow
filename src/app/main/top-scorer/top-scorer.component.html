@@ -7,7 +7,7 @@
     <div fxLayoutAlign="center center">
       <img
         class="wm-success__trophy"
-        src="assets/images/trophy-2.png"
+        src="assets/images/match.png"
         alt="Trophy"
       />
       <div class="wm-success__leader-score">
@@ -17,19 +17,11 @@
     <span class="wm-success__congrats-text {{ animatedClass }}">
       TOP SCORE!
     </span>
-    <span class="wm-success__you-found-1"> CONGRATULATIONS! </span>
-    <span class="wm-success__you-found"> YOU'RE ON THE LEADERBOARD! </span>
-    <div fxLayoutAlign="center center">
-      <img
-        src="assets/images/time-holder.png"
-        alt="Time holder"
-        class="wm-success__time"
-      />
-      <div class="wm-success__time-text">
-        {{ time | number: '.2-2' }}<small>s</small>
-      </div>
-    </div>
-    <span class="wm-success__your-time"> YOUR TIME </span>
+    <span class="wm-success__you-found"> FOUND ALL MATCHES </span>
+    <small class="wm-success__you-found">
+      IN {{ time | number: '.2-2' }} SECONDS
+    </small>
+
     <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS
     </span>
@@ -58,16 +50,12 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-success__action-btn" (click)="play()">
-      <img
-        src="assets/images/play-again-btn.png"
-        alt="Play Again"
-        style="margin-left: 12px"
-      />
-      <span> PLAY AGAIN </span>
+      <img src="assets/images/play-again-btn.png" alt="Play Again" />
+      <!-- <span> PLAY AGAIN </span> -->
     </div>
     <div class="wm-success__action-btn" (click)="leaderBoards()">
       <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <span> LEADERBOARD </span>
+      <!-- <span> LEADERBOARD </span> -->
     </div>
   </div>
 </div>

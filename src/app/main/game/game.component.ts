@@ -85,7 +85,7 @@ export class GameComponent implements OnInit {
 
             sound.play();
 
-            if (this.tilesMatch >= 6) {
+            if (this.tilesMatch >= 5) {
               let top = -1;
 
               const leaderboards = cloneDeep(this.leaderboards);
@@ -135,7 +135,8 @@ export class GameComponent implements OnInit {
             setTimeout(() => {
               this.tile1.opened = tile.opened = false;
               this.tile1 = this.tile2 = null;
-            }, 300);
+              console.log('here');
+            }, 800);
           }
         }
       }
@@ -160,7 +161,26 @@ export class GameComponent implements OnInit {
         isEffects: false,
       }));
 
-    this.neededTiles = Array(6)
+    const tileNames = [
+      'Cloud',
+      'Cyber Security',
+      'Mobility',
+      'Business Applications',
+      'Data Center',
+      'Cloud',
+      'Cyber Security',
+      'Mobility',
+      'Business Applications',
+      'Data Center',
+      'Health Care',
+      'Hospitality',
+      'Logistics & Transport',
+      'Manufacturing',
+      'Public Sector',
+      'Public Sector',
+    ];
+
+    this.neededTiles = Array(5)
       .fill(1)
       .map((n, i) => ({
         imagePath: `/assets/images/game-icons/${i + 1}.png`,
@@ -169,27 +189,31 @@ export class GameComponent implements OnInit {
         matched: false,
         isLandscape: false,
         isEffects: false,
+        description: tileNames[i],
       }));
 
     this.tiles = [
       ...cloneDeep(this.neededTiles),
       ...cloneDeep(this.neededTiles),
       ...cloneDeep(this.distractionTiles),
-    ];
+    ].map((tile, i) => ({
+      ...tile,
+      description: tileNames[i],
+    }));
 
     this.tiles = shuffle(this.tiles).map((tile, index) => ({ ...tile, index }));
-    this.row1 = this.tiles.slice(0, 6);
-    this.row2 = this.tiles.slice(6, 13);
+    this.row1 = this.tiles.slice(0, 5);
+    this.row2 = this.tiles.slice(5, 11);
     console.log(this.row2);
-    this.row3 = this.tiles.slice(13, 19);
+    this.row3 = this.tiles.slice(11, 16);
   }
 
   private startTimeInterval() {
     interval(10)
-      .pipe(filter(() => this.time < 60 && this.tilesMatch < 6))
+      .pipe(filter(() => this.time < 30 && this.tilesMatch < 6))
       .subscribe(async () => {
         this.time += 0.01;
-        if (this.time >= 60) {
+        if (this.time >= 30) {
           let leaderboard = await this.leaderboardService.create({
             name: localStorage.getItem('name'),
             match: this.tilesMatch,

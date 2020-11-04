@@ -1,4 +1,10 @@
-<div class="wm-leaderboard" fxLayoutAlign="center center">
+<div class="wm-leaderboard" fxLayout="column" fxLayoutAlign="center center">
+  <!-- <img
+    src="assets/images/logo-leaderboard.png"
+    alt="Leaderboard"
+    class="wm-leaderboard__logo-leader"
+  /> -->
+
   <div
     class="wm-leaderboard__container"
     fxLayout="column"
@@ -9,10 +15,10 @@
       alt="Leaderboard"
       class="wm-leaderboard__bg"
     /> -->
-    <div class="wm-leaderboard__header">
+    <!-- <div class="wm-leaderboard__header">
       <img src="assets/images/logo.png" alt="Logo" />
       <span> LEADERBOARD </span>
-    </div>
+    </div> -->
     <div class="wm-leaderboard__leader-container" [@listAnimation]="5">
       <!-- Leaderitem -->
       <div
@@ -20,22 +26,31 @@
         *ngFor="let leader of leaderboards; let i = index"
       >
         <div class="wm-leaderboard__leader-caption">
-          <img src="assets/images/leader-item-2.png" alt="Leader Item" />
-          <span>
-            {{ i + 1 }}
-          </span>
+          <img src="assets/images/leaderboard-item.png" alt="Leader Item" />
+          <div class="wm-leaderboard__leader-caption-body">
+            <div
+              class="w-100 position-relative d-flex flex-row justify-content-between align-items-center"
+            >
+              <span class="rank">
+                {{ i + 1 }}
+              </span>
+              <span>
+                {{ leader.name }}
+              </span>
+              <span
+                >{{ leader.time }} <span *ngIf="leader.time"> s</span>
+              </span>
+            </div>
+          </div>
         </div>
         <div class="wm-leaderboard__leader-body">
-          <img src="assets/images/leader-item-1.png" alt="Leader Item" />
-          <div>
+          <!-- <img src="assets/images/hr.png" alt="Leader Item" /> -->
+          <!-- <div>
             <span>
               {{ leader.name }}
             </span>
-            <span>
-              {{ leader.time | number: '.2-2'
-              }}<span *ngIf="leader.time">s</span>
-            </span>
-          </div>
+            <span>{{ leader.score }}<span *ngIf="leader.time"> </span> </span>
+          </div> -->
         </div>
       </div>
     </div>
@@ -46,16 +61,16 @@
     fxLayoutAlign="center center"
   >
     <div class="wm-leaderboard__action-btn" (click)="play()">
-      <img
-        src="assets/images/play-again-btn.png"
-        alt="Play Again"
-        style="margin-left: 12px"
-      />
-      <span> PLAY AGAIN </span>
+      <img src="assets/images/play-again-btn.png" alt="Play Again" />
+      <!-- <span>
+        PLAY AGAIN
+      </span> -->
     </div>
     <div class="wm-leaderboard__action-btn" (click)="leaderBoards()">
       <img src="assets/images/leaderboard-btn-2.png" alt="Leaderboard" />
-      <span> LEADERBOARD </span>
+      <!-- <span>
+        LEADERBOARD
+      </span> -->
     </div>
   </div>
 </div>

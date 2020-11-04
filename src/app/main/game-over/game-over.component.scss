@@ -2,113 +2,320 @@
 @import '~src/assets/scss/config';
 
 .#{$style-prefix}-success {
-  background-image: url(/assets/images/bg-3.png);
+  background-image: url(/assets/images/bg-2.png);
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
 
+  &__congrats-text {
+    color: white;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  &__score-container {
+    background-color: #1e1d70;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    color: white;
+    font-weight: 700;
+
+    @include for-phone {
+      // margin-top: 3px;
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      font-size: 16px;
+    }
+
+    @include for-small-desktop {
+      font-size: 22px;
+    }
+
+    @include for-desktop {
+      font-size: 24px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+    }
+  }
+
+  &__logo {
+    height: 32vh;
+    position: absolute;
+    bottom: 3.5vh;
+    left: 3.5vh;
+  }
+
+  &__trophy {
+    height: 20vh !important;
+  }
+
+  &__ty {
+    height: 15vh;
+  }
+
+  &__home {
+    height: 11vh;
+    position: absolute;
+    top: 3.5vh;
+    left: 3.5vh;
+  }
+
+  &__cta {
+    height: 18vh;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+  }
+
+  &__globe {
+    height: 11vh;
+    position: absolute;
+    top: 3.5vh;
+    right: 3.5vh;
+  }
+
+  &__collected-text {
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+
+    @include for-phone {
+      // margin-top: 3px;
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    @include for-small-desktop {
+      font-size: 22px;
+      margin-top: 12px;
+    }
+
+    @include for-desktop {
+      font-size: 24px;
+      margin-top: 15px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+  }
+
+  &__collected-all {
+    height: 18vh;
+    margin-bottom: -3vh;
+  }
+
   &__container {
     height: 100%;
   }
 
-  &__leader-score {
+  &__your-score {
+    display: inline-block;
+    vertical-align: top;
     text-align: center;
-    font-family: 'Dolce Vita';
-    position: absolute;
     color: white;
-    font-weight: 800;
-    padding-left: 1.5%;
-    padding-bottom: 1%;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+
+    // font-family:  Arial, Helvetica, sans-serif;
+    // position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // padding-left: 1.5%;
+    // padding-bottom: 1%;
 
     @include for-phone {
-      font-size: 28px;
+      font-size: 22px;
     }
 
     @include for-tablet {
-      font-size: 42px;
+      font-size: 24px;
     }
 
     @include for-small-desktop {
-      font-size: 62px;
+      font-size: 26px;
     }
 
     @include for-desktop {
-      font-size: 84px;
+      font-size: 30px;
     }
 
     @include for-big-desktop {
+      font-size: 32px;
+    }
+  }
+
+  &__score-img {
+    height: 35vh;
+  }
+
+  &__rank {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    color: white;
+    // font-family:  Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin-left: -1.5vh;
+
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+
+    @include for-phone {
+      // margin-top: 3px;
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    @include for-small-desktop {
+      font-size: 22px;
+      margin-top: 12px;
+    }
+
+    @include for-desktop {
+      font-size: 24px;
+      margin-top: 15px;
+    }
+
+    @include for-big-desktop {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+  }
+
+  p {
+    @include for-phone {
+      // margin-top: 3px;
+      font-size: 12px;
+    }
+
+    @include for-tablet {
+      font-size: 12px;
+    }
+
+    @include for-small-desktop {
+      font-size: 16px;
+    }
+
+    @include for-desktop {
+      font-size: 18px;
+    }
+
+    @include for-big-desktop {
+      font-size: 20px;
+    }
+  }
+
+  &__leader-score {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    color: black;
+    // font-family:  Arial, Helvetica, sans-serif;
+    position: absolute;
+    // color: $dark;
+    font-weight: 600;
+    // margin-left: -1.5vh;
+    margin-top: -3vh;
+    // margin-bottom: 4vh;
+
+    small {
+      @include for-phone {
+        font-size: 16px;
+      }
+
+      @include for-tablet {
+        font-size: 20px;
+      }
+
+      @include for-small-desktop {
+        font-size: 24px;
+      }
+
+      @include for-desktop {
+        font-size: 28px;
+      }
+
+      @include for-big-desktop {
+        font-size: 32px;
+      }
+    }
+
+    @include for-phone {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    @include for-tablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include for-small-desktop {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include for-desktop {
       font-size: 112px;
+      line-height: 112px;
+    }
+
+    @include for-big-desktop {
+      font-size: 124px;
+      line-height: 124px;
     }
   }
 
   &__congrats-text {
     margin-top: 5px;
-    font-family: 'Dolce Vita';
-    font-size: 36px;
-    letter-spacing: 5px;
-    font-weight: 600;
-    color: white;
-
-    @include for-phone {
-      margin-top: 0px;
-      font-size: 28px;
-    }
-
-    @include for-tablet {
-      font-size: 32px;
-      margin-top: 0px;
-    }
-
-    @include for-small-desktop {
-      font-size: 36px;
-      margin-top: 7px;
-    }
-
-    @include for-desktop {
-      font-size: 42px;
-      margin-top: 10px;
-    }
-
-    @include for-big-desktop {
-      font-size: 52px;
-      margin-top: 12px;
-    }
-
-    margin-top: 5px;
-    font-family: 'Dolce Vita';
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 36px;
     letter-spacing: 5px;
     font-weight: 600;
 
     @include for-phone {
       margin-top: 3px;
-      font-size: 28px;
+      font-size: 20px;
     }
 
     @include for-tablet {
-      font-size: 32px;
+      font-size: 24px;
       margin-top: 5px;
     }
 
     @include for-small-desktop {
-      font-size: 36px;
+      font-size: 28px;
       margin-top: 7px;
     }
 
     @include for-desktop {
-      font-size: 42px;
+      font-size: 32px;
       margin-top: 10px;
     }
 
     @include for-big-desktop {
-      font-size: 52px;
+      font-size: 36px;
       margin-top: 12px;
     }
   }
 
   &__you-found-1 {
-    font-family: 'Varela';
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
     color: white;
@@ -118,7 +325,7 @@
     }
 
     @include for-tablet {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     @include for-small-desktop {
@@ -135,7 +342,7 @@
   }
 
   &__your-time {
-    font-family: 'Varela';
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
 
@@ -174,13 +381,13 @@
     @include for-phone {
       font-size: 12px;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 5px;
     }
 
     @include for-tablet {
       font-size: 14px;
       letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     @include for-small-desktop {
@@ -204,39 +411,36 @@
 
   &__share-results {
     text-transform: uppercase;
-    color: white;
 
-    font-family: 'Varela';
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 3px;
     font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 
     @include for-phone {
       font-size: 12px;
-      margin-top: 14px;
+      margin-top: 0;
       letter-spacing: 1px;
     }
 
     @include for-tablet {
       font-size: 14px;
-      margin-top: 20px;
       letter-spacing: 1px;
     }
 
     @include for-small-desktop {
       font-size: 16px;
-      margin-top: 24px;
       letter-spacing: 3px;
     }
 
     @include for-desktop {
       font-size: 18px;
-      margin-top: 36px;
       letter-spacing: 3px;
     }
 
     @include for-big-desktop {
       font-size: 20px;
-      margin-top: 64px;
       letter-spacing: 3px;
     }
   }
@@ -245,6 +449,7 @@
     cursor: pointer;
     transition: 0.2s ease-in;
     margin-top: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 
     &:hover {
       transform: scale(1.1);
@@ -253,20 +458,21 @@
     &:active {
       transform: scale(0.9);
     }
+
     @include for-phone {
-      max-width: 32px;
+      max-width: 28px;
     }
 
     @include for-tablet {
-      max-width: 42px;
+      max-width: 36px;
     }
 
     @include for-small-desktop {
-      max-width: 48px;
+      max-width: 42px;
     }
 
     @include for-desktop {
-      max-width: 52px;
+      max-width: 48px;
     }
 
     @include for-big-desktop {
@@ -275,25 +481,7 @@
   }
 
   &__trophy {
-    @include for-phone {
-      max-width: 48px;
-    }
-
-    @include for-tablet {
-      max-width: 84px;
-    }
-
-    @include for-small-desktop {
-      max-width: 102px;
-    }
-
-    @include for-desktop {
-      max-width: 140px;
-    }
-
-    @include for-big-desktop {
-      max-width: 200px;
-    }
+    height: 30vh;
   }
 
   &__action-container {
@@ -303,27 +491,27 @@
 
     @include for-phone {
       right: 1%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-tablet {
       right: 2%;
-      bottom: 2.5%;
+      bottom: 3.5%;
     }
 
     @include for-small-desktop {
       right: 3%;
-      bottom: 3%;
+      bottom: 5%;
     }
 
     @include for-desktop {
       right: 4%;
-      bottom: 4%;
+      bottom: 6%;
     }
 
     @include for-big-desktop {
       right: 5%;
-      bottom: 5%;
+      bottom: 7%;
     }
   }
 
@@ -332,10 +520,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
 
     span {
-      font-family: 'Dolce Vita';
+      font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 2px;
       font-size: 24px;
       font-weight: 600;
@@ -373,10 +560,11 @@
     // }
 
     img {
-      margin-top: 20px;
-      max-width: 120px;
+      height: 24vh;
+      min-height: 30px;
       transition: 0.2s ease-in;
       cursor: pointer;
+      margin: 1vh;
 
       &:hover {
         transform: scale(1.1);
@@ -385,69 +573,39 @@
       &:active {
         transform: scale(0.9);
       }
-
-      @include for-phone {
-        max-width: 60px;
-        margin-top: 20px;
-        margin-left: -5px;
-      }
-
-      @include for-tablet {
-        max-width: 80px;
-        margin-top: 24px;
-        margin-left: -10px;
-      }
-
-      @include for-small-desktop {
-        max-width: 100px;
-        margin-top: 32px;
-        margin-left: -15px;
-      }
-
-      @include for-desktop {
-        max-width: 120px;
-        margin-top: 36px;
-        margin-left: -20px;
-      }
-
-      @include for-big-desktop {
-        max-width: 150px;
-        margin-top: 50px;
-        margin-left: -25px;
-      }
     }
   }
 
   &__time-text {
-    font-family: 'Dolce Vita';
+    // font-family:  Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     font-size: 24px;
-    font-weight: 600;
+    // font-weight: 600;
     position: absolute;
 
     @include for-phone {
+      font-size: 16px;
+      padding-bottom: 3px;
+    }
+
+    @include for-tablet {
       font-size: 18px;
       padding-bottom: 5px;
     }
 
-    @include for-tablet {
-      font-size: 20px;
-      padding-bottom: 7px;
-    }
-
     @include for-small-desktop {
-      font-size: 24px;
-      padding-bottom: 10px;
+      font-size: 20px;
+      padding-bottom: 6px;
     }
 
     @include for-desktop {
-      font-size: 28px;
-      padding-bottom: 12px;
+      font-size: 24px;
+      padding-bottom: 8px;
     }
 
     @include for-big-desktop {
-      font-size: 32px;
-      padding-bottom: 14px;
+      font-size: 28px;
+      padding-bottom: 10px;
     }
   }
 
@@ -462,19 +620,19 @@
     }
 
     @include for-tablet {
-      width: 160px;
-    }
-
-    @include for-small-desktop {
       width: 200px;
     }
 
-    @include for-desktop {
+    @include for-small-desktop {
       width: 240px;
     }
 
+    @include for-desktop {
+      width: 300px;
+    }
+
     @include for-big-desktop {
-      width: 280px;
+      width: 320px;
     }
   }
 }
