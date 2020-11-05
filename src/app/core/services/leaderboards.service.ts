@@ -42,7 +42,7 @@ export class LeaderboardService {
   getAllLeader(): Observable<Leaderboard[]> {
     return this.angularFirestore
       .collection<Leaderboard>(this.collectionName, (ref) =>
-        ref.where('time', '>', 0).orderBy('time', 'asc').limit(5)
+        ref.where('time', '>', 0).orderBy('time', 'desc').limit(5)
       )
       .valueChanges({ idField: 'id' });
   }

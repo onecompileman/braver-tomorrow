@@ -43,7 +43,7 @@ export class GameComponent implements OnInit {
     if (!localStorage.getItem('name')) {
       this.router.navigate(['/']);
     }
-    this.time = 0;
+    this.time = 60;
     this.initTiles();
     this.getLeaderboards();
     this.tilesMatch = 0;
@@ -96,7 +96,7 @@ export class GameComponent implements OnInit {
                 id: 'this',
               });
 
-              leaderboards.sort((a, b) => a.time - b.time);
+              leaderboards.sort((a, b) => b.time - a.time);
 
               top = leaderboards.findIndex((l) => l.id === 'this') + 1;
 
@@ -210,10 +210,10 @@ export class GameComponent implements OnInit {
 
   private startTimeInterval() {
     interval(10)
-      .pipe(filter(() => this.time < 30 && this.tilesMatch < 6))
+      .pipe(filter(() => this.time >= 0 && this.tilesMatch < 5))
       .subscribe(async () => {
-        this.time += 0.01;
-        if (this.time >= 30) {
+        this.time -= 0.01;
+        if (this.time <= 0) {
           let leaderboard = await this.leaderboardService.create({
             name: localStorage.getItem('name'),
             match: this.tilesMatch,

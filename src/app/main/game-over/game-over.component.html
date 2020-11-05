@@ -4,20 +4,13 @@
     fxLayout="column"
     fxLayoutAlign="center center"
   >
-    <div fxLayoutAlign="center center">
-      <img
-        class="wm-success__trophy"
-        src="assets/images/match.png"
-        alt="Trophy"
-      />
+    <div fxLayoutAlign="center center" class="wm-success__leader">
       <div class="wm-success__leader-score">
         {{ matches }}
       </div>
     </div>
-    <span class="wm-success__congrats-text"> FOUND ALL MATCHES </span>
-    <small class="wm-success__you-found">
-      IN {{ time | number: '.2-2' }} SECONDS
-    </small>
+    <span class="wm-success__congrats-text"> MATCHES FOUND </span>
+    <small class="wm-success__you-found"> IN 60.00 SECONDS </small>
 
     <span class="wm-success__share-results" *ngIf="!isShareMode">
       SHARE YOUR RESULTS

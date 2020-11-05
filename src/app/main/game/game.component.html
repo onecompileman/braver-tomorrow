@@ -173,10 +173,10 @@
   <div class="wm-game__game-text animate__animated">
     <span> GAME </span>
   </div>
-  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 6">
+  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 5">
     <span> CONGRATS </span>
   </div>
-  <div class="wm-game__game-text" *ngIf="time >= 30">
+  <div class="wm-game__game-text" *ngIf="time <= 0">
     <span> TIMES UP </span>
   </div>
 </div>

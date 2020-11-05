@@ -8,6 +8,16 @@
   height: 100%;
   width: 100%;
 
+  &__leader {
+    background-color: #cd87ab;
+    border-radius: 100%;
+    height: 18vh;
+    width: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__congrats-text {
     color: white;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
@@ -226,7 +236,7 @@
     text-align: center;
     color: black;
     // font-family:  Arial, Helvetica, sans-serif;
-    position: absolute;
+    // position: absolute;
     // color: $dark;
     font-weight: 600;
     // margin-left: -1.5vh;

@@ -1,3 +1,27 @@
-<p>
-  reset works!
-</p>
+<div
+  class="d-flex flex-column p-5"
+  style="overflow-y: scroll; max-height: 100vh"
+  *ngIf="hasAccess"
+>
+  <div (click)="reset()" class="btn btn-danger">RESET</div>
+  <br />
+  <div (click)="exportCSV()" class="btn btn-success">EXPORT CSV</div>
+
+  <b>Total Times Played</b> {{ totalTimesGamePlayed }} <br />
+  <b>Unique Users</b> {{ uniqueUsers }} <br />
+
+  <table class="table table-striped table-hover mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leaderboard of leaderboards">
+        <td>{{ leaderboard.name }}</td>
+        <td>{{ leaderboard.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
